@@ -7,10 +7,10 @@ import {
 
 export default function Navbar() {
 	return (
-		<div className="sticky top-0 w-full bg-white z-50 shadow-sm">
+		<div className="sticky top-0 w-full bg-white text-gray-700 z-50 shadow-sm">
 			<div className="flex mr-32 justify-end">
 				<NavigationMenu>
-					<NavigationMenuList className="flex gap-2 h-18">
+					<NavigationMenuList className="flex gap-2 h-22">
 						<NavigationMenuItem>
 							<NavigationMenuLink className="hover:bg-white" href="#header">
 								HOME

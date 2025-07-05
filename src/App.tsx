@@ -30,10 +30,12 @@ function App() {
 	return (
 		<>
 			<Navbar />
-			<div className="mx-24">
+			<div className="mx-24 text-[0.95rem] font-default">
 				<HeaderSection />
-				<AboutSection />
-				<CVSection />
+				<div className=" text-left">
+					<AboutSection />
+					<CVSection />
+				</div>
 				<PortfolioSection />
 				<ProjectsSection />
 				<ContactSection />
