@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greetvandewynckele-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greetvandewynckele
+  template:
+    metadata:
+      labels:
+        app: greetvandewynckele
+    spec:
+      containers:
+        - name: greetvandewynckele
+          image: your-registry/react-static-app:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: greetvandewynckele-service
+spec:
+  selector:
+    app: greetvandewynckele
+  ports:
+    - protocol: TCP
+      port: 443
+      targetPort: 443
+  type: ClusterIP
