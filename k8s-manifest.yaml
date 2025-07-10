@@ -40,7 +40,7 @@ metadata:
   namespace: greetvandewynckele
 spec:
   parentRefs:
-  - name: greetvwd-gw
+  - name: greetvdw-gw
     namespace: istio-ingress
   hostnames:
   - "greetvandewynckele.com"
@@ -52,24 +52,26 @@ spec:
         value: /
     backendRefs:
     - name: greetvandewynckele-svc
-      port: 3000
+      port: 443
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
-  name: greetvwd-gw
+  name: greetvdw-gw
   namespace: istio-ingress
 spec:
   gatewayClassName: istio
   listeners:
-    - name: https-greetvwd
+    - name: https-greetvdw
       hostname: "greetvandewynckele.com"
       protocol: HTTPS
       port: 443
       tls:
         mode: Terminate
         certificateRefs:
-        - name: greetvwd-cert
+        - name: greetvdw-cert
+          namespace: istio-ingress
+          group: ""
       allowedRoutes:
         namespaces:
           from: Selector
