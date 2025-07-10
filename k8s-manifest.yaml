@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: greetvandewynckele-deployment
+  namespace: greetvandewynckele
 spec:
   replicas: 1
   selector:
@@ -21,12 +22,71 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: greetvandewynckele-service
+  name: greetvandewynckele-svc
+  namespace: greetvandewynckele
 spec:
   selector:
     app: greetvandewynckele
   ports:
     - protocol: TCP
       port: 443
-      targetPort: 443
+      targetPort: 80
   type: ClusterIP
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: greetvdw-httproute
+  namespace: greetvandewynckele
+spec:
+  parentRefs:
+  - name: greetvwd-gw
+    namespace: istio-ingress
+  hostnames:
+  - "greetvandewynckele.com"
+  - "*.greetvandewynckele.com"
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    backendRefs:
+    - name: greetvandewynckele-svc
+      port: 3000
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: greetvwd-gw
+  namespace: istio-ingress
+spec:
+  gatewayClassName: istio
+  listeners:
+    - name: https-greetvwd
+      hostname: "greetvandewynckele.com"
+      protocol: HTTPS
+      port: 443
+      tls:
+        mode: Terminate
+        certificateRefs:
+        - name: greetvwd-cert
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            matchLabels:
+              kubernetes.io/metadata.name: greetvandewynckele
+    - name: https-greetvdw-wc
+      hostname: "*.greetvandewynckele.com"
+      protocol: HTTPS
+      port: 443
+      tls:
+        mode: Terminate
+        certificateRefs:
+        - name: greetvdw-cert
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            matchLabels:
+              kubernetes.io/metadata.name: greetvandewynckele
