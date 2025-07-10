@@ -39,7 +39,7 @@ jobs:
         push: true
         tags: |
           ${{ steps.meta.outputs.tags }}
-          greetvandewynckele:${{ github.sha }}
+          ghcr.io/arnoldvann/greetvandewynckele:${{ github.sha }}
         labels: ${{ steps.meta.outputs.labels }}
 
   deploy:
