@@ -4,6 +4,10 @@ on:
   push:
     branches: [ "main" ]
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
 
   build:
@@ -36,7 +40,7 @@ jobs:
         tags: |
           ${{ steps.meta.outputs.tags }}
           greetvandewynckele:${{ github.sha }}
-        labels: ${{ steps.meta.outputs.labels }}    
+        labels: ${{ steps.meta.outputs.labels }}
 
   deploy:
 
