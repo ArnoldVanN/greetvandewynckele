@@ -11,6 +11,44 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag greetvandewynckele:${{ github.sha }}
+    - name: Checkout the repo
+      uses: actions/checkout@v4
+
+    - name: Log in to the Container registry
+      uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567
+      with:
+        registry: https://ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Docker meta
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ghcr.io/arnoldvann/greetvandewynckele
+
+    - name: Build and push the Docker image
+      uses: docker/build-push-action@4f58ea79222b3b9dc2c8bbdd6debcef730109a75
+      with:
+        context: .
+        file: Dockerfile
+        push: true
+        tags: |
+          ${{ steps.meta.outputs.tags }}
+          greetvandewynckele:${{ github.sha }}
+        labels: ${{ steps.meta.outputs.labels }}    
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup Kubeconfig
+      run: |
+        echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
+        chmod 600 $HOME/.kube/config
+
+    - name: Update deployment image and rollout
+      run: |
+        kubectl set image deployment/greetvandewynckele greetvandewynckele=ghcr.io/arnoldvann/greetvandewynckele:${{ github.sha }} -n greetvandewynckele
+        kubectl rollout status deployment/greetvandewynckele -n greetvandewynckele

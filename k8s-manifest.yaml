@@ -90,3 +90,33 @@ spec:
           selector:
             matchLabels:
               kubernetes.io/metadata.name: greetvandewynckele
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ci-sa
+  namespace: greetvandewynckele
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: greetvandewynckele
+  name: ci
+rules:
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["get", "list", "watch", "create", "update", "delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: greetvdw-ci-sa-binding
+  namespace: greetvandewynckele
+subjects:
+- kind: ServiceAccount
+  name: ci-sa
+  namespace: greetvandewynckele
+roleRef:
+  kind: Role
+  name: ci
+  apiGroup: rbac.authorization.k8s.io
