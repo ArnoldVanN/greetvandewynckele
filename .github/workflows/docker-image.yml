@@ -50,10 +50,11 @@ jobs:
     steps:
     - name: Setup Kubeconfig
       run: |
+        mkdir $HOME/.kube
         echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
         chmod 600 $HOME/.kube/config
-
+        
     - name: Update deployment image and rollout
       run: |
-        kubectl set image deployment/greetvandewynckele greetvandewynckele=ghcr.io/arnoldvann/greetvandewynckele:${{ github.sha }} -n greetvandewynckele
+        kubectl set image deployment/greetvandewynckele-deployment greetvandewynckele=ghcr.io/arnoldvann/greetvandewynckele:${{ github.sha }} -n greetvandewynckele
         kubectl rollout status deployment/greetvandewynckele -n greetvandewynckele
