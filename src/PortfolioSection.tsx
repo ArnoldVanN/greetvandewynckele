@@ -52,11 +52,11 @@ export default function PortfolioSection() {
   return (
     <section id="portfolio" className="min-h-[400px]">
       <SectionHeading>Portfolio</SectionHeading>
-      <Carousel className="mt-6 ">
+      <Carousel className="mt-6 md:flex ">
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem
-              className="w-[40rem] h-[40rem] basis-1/7 overflow-hidden relative"
+              className="w-[40rem] h-[40rem] sm:basis-1/3 md:basis-1/5 lg:basis-1/7 overflow-hidden relative"
               key={index}
             >
               <Dialog>
@@ -93,8 +93,10 @@ export default function PortfolioSection() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <div className="absolute h-[210%] left-1/2">
+          <CarouselPrevious />
+          <CarouselNext />
+        </div>
       </Carousel>
     </section>
   );

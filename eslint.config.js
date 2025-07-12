@@ -1,11 +1,11 @@
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
+import tseslint from "typescript-eslint";
+import reactX from "eslint-plugin-react-x";
+import reactDom from "eslint-plugin-react-dom";
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  { ignores: ["dist"] },
   {
     extends: [
       // Remove ...tseslint.configs.recommended and replace with this
@@ -15,28 +15,28 @@ export default tseslint.config(
       // Optionally, add this for stylistic rules
       ...tseslint.configs.stylisticTypeChecked,
     ],
-    files: ['**/*.{ts,tsx}'],
+    files: ["**/*.{ts,tsx}"],
     languageOptions: {
       // other options...
       parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
         tsconfigRootDir: import.meta.dirname,
       },
     },
     plugins: {
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-      'react-x': reactX,
-      'react-dom': reactDom,
+      "react-hooks": reactHooks,
+      "react-refresh": reactRefresh,
+      "react-x": reactX,
+      "react-dom": reactDom,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': [
-        'warn',
+      "react-refresh/only-export-components": [
+        "warn",
         { allowConstantExport: true },
       ],
-      ...reactX.configs['recommended-typescript'].rules,
+      ...reactX.configs["recommended-typescript"].rules,
       ...reactDom.configs.recommended.rules,
     },
   },
-)
+);

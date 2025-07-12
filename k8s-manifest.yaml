@@ -40,19 +40,19 @@ metadata:
   namespace: greetvandewynckele
 spec:
   parentRefs:
-  - name: greetvdw-gw
-    namespace: istio-ingress
+    - name: greetvdw-gw
+      namespace: istio-ingress
   hostnames:
-  - "greetvandewynckele.com"
-  - "*.greetvandewynckele.com"
+    - "greetvandewynckele.com"
+    - "*.greetvandewynckele.com"
   rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /
-    backendRefs:
-    - name: greetvandewynckele-svc
-      port: 443
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: greetvandewynckele-svc
+          port: 443
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
@@ -69,9 +69,9 @@ spec:
       tls:
         mode: Terminate
         certificateRefs:
-        - name: greetvdw-cert
-          namespace: istio-ingress
-          group: ""
+          - name: greetvdw-cert
+            namespace: istio-ingress
+            group: ""
       allowedRoutes:
         namespaces:
           from: Selector
@@ -85,7 +85,7 @@ spec:
       tls:
         mode: Terminate
         certificateRefs:
-        - name: greetvdw-cert
+          - name: greetvdw-cert
       allowedRoutes:
         namespaces:
           from: Selector
@@ -105,9 +105,9 @@ metadata:
   namespace: greetvandewynckele
   name: ci
 rules:
-- apiGroups: ["apps"]
-  resources: ["deployments"]
-  verbs: ["get", "list", "watch", "create", "update", "delete", "patch"]
+  - apiGroups: ["apps"]
+    resources: ["deployments"]
+    verbs: ["get", "list", "watch", "create", "update", "delete", "patch"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -115,9 +115,9 @@ metadata:
   name: greetvdw-ci-sa-binding
   namespace: greetvandewynckele
 subjects:
-- kind: ServiceAccount
-  name: ci-sa
-  namespace: greetvandewynckele
+  - kind: ServiceAccount
+    name: ci-sa
+    namespace: greetvandewynckele
 roleRef:
   kind: Role
   name: ci
