@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <>
       <div className="sticky top-0 w-full bg-white text-gray-700 z-50 shadow-sm">
-        <div className="flex mr-24 justify-end">
+        <div className="flex mr-4 md:mr-24 justify-end">
           <NavigationMenu className="">
             <NavigationMenuList className=" gap-2 h-22">
               {/* Main Navbar */}
