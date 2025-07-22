@@ -31,37 +31,37 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
             <CarouselContent>
                 {images.map((image, index) => (
                     <CarouselItem
-                        className="w-[40rem] h-[40rem] sm:basis-1/3 md:basis-1/5 lg:basis-1/7 overflow-hidden relative"
+                        className="w-[40rem] h-[40rem] sm:basis-1/3 md:basis-1/5 lg:basis-1/7 relative"
                         key={index}>
                         <Dialog>
                             <DialogTrigger asChild>
                                 <img
                                     className="w-full h-full object-cover"
                                     src={image.src}
-                                    alt={`Painting ${index + 1}`}
+                                    alt={image.alt}
                                 />
                             </DialogTrigger>
                             <DialogContent className=" min-h-128 min-w-2/3 ">
-                                <div className="flex max-h-[60vw]">
-                                    <img
-                                        className="w-2/3 object-contain"
-                                        src={image.src}
-                                        alt={`Painting ${index + 1}`}
-                                    />
+                                <div className="flex max-h-[90vh]">
+                                    <Carousel opts={{ startIndex: index }} className="max-w-4/5">
+                                        <CarouselContent>
+                                            {images.map((img, idx) => (
+                                                <CarouselItem key={idx} className="basis-full flex justify-center relative ">
+                                                    <img
+                                                        className="h-full max-h-[90vh]"
+                                                        src={img.src}
+                                                        alt={img.alt}
+                                                    />
+                                                </CarouselItem>
+                                            ))}
+                                        </CarouselContent>
+                                    </Carousel>
                                     <DialogHeader className="self-start pl-2 w-1/3">
                                         <DialogDescription className="font-playfair italic text-lg">
                                             {image.description}
                                         </DialogDescription>
                                     </DialogHeader>
                                 </div>
-
-                                {/* <DialogFooter className="sm:justify-start">
-										<DialogClose asChild>
-											<Button type="button" variant="secondary">
-												Close
-											</Button>
-										</DialogClose>
-									</DialogFooter> */}
                             </DialogContent>
                         </Dialog>
                     </CarouselItem>
