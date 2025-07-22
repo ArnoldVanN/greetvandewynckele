@@ -4,7 +4,7 @@ export default function CVSection() {
   return (
     <section
       id="cv"
-      className="min-h-[400px]  mx-[5%] sm:mx-[10%] md:mx-[20%] xl:mx-[30%]  py-16"
+      className="min-h-[400px]  mx-[5%] sm:mx-[10%] md:mx-[20%] xl:mx-[30%]  py-16 "
     >
       <SectionHeading>CV</SectionHeading>
       <div className="mt-10">

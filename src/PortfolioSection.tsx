@@ -1,11 +1,4 @@
 import SectionHeading from "./components/SectionHeading";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "./components/ui/carousel";
 
 import p1 from "@/assets/art/painting (1).jpg";
 import p2 from "@/assets/art/painting (2).jpg";
@@ -22,82 +15,94 @@ import p12 from "@/assets/art/painting (12).jpg";
 import p13 from "@/assets/art/painting (13).jpg";
 import p14 from "@/assets/art/painting (14).jpg";
 import p15 from "@/assets/art/painting (15).jpg";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTrigger,
-} from "./components/ui/dialog";
 
-const images = [
-  p1,
-  p2,
-  p3,
-  p4,
-  p5,
-  p6,
-  p7,
-  p8,
-  p9,
-  p10,
-  p11,
-  p12,
-  p13,
-  p14,
-  p15,
+import { type Image } from "./components/CustomCarousel";
+
+import CustomCarousel from "./components/CustomCarousel";
+
+const images: Image[] = [
+	{
+		src: p1,
+		alt: "Painting 1",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p2,
+		alt: "Painting 2",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p3,
+		alt: "Painting 3",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p4,
+		alt: "Painting 4",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p5,
+		alt: "Painting 5",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p6,
+		alt: "Painting 6",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p7,
+		alt: "Painting 7",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p8,
+		alt: "Painting 8",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p9,
+		alt: "Painting 9",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p10,
+		alt: "Painting 10",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p11,
+		alt: "Painting 11",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p12,
+		alt: "Painting 12",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p13,
+		alt: "Painting 13",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p14,
+		alt: "Painting 14",
+		description: "Trompe l'oeil Rose de Valence"
+	},
+	{
+		src: p15,
+		alt: "Painting 15",
+		description: "Trompe l'oeil Rose de Valence"
+	},
 ];
 
 export default function PortfolioSection() {
-  return (
-    <section id="portfolio" className="min-h-[400px]">
-      <SectionHeading>Portfolio</SectionHeading>
-      <Carousel className="mt-6 md:flex ">
-        <CarouselContent>
-          {images.map((image, index) => (
-            <CarouselItem
-              className="w-[40rem] h-[40rem] sm:basis-1/3 md:basis-1/5 lg:basis-1/7 overflow-hidden relative"
-              key={index}
-            >
-              <Dialog>
-                <DialogTrigger asChild>
-                  <img
-                    className="w-full h-full object-cover"
-                    src={image}
-                    alt={`Painting ${index + 1}`}
-                  />
-                </DialogTrigger>
-                <DialogContent className=" min-h-128 min-w-2/3 ">
-                  <div className="flex max-h-[60vw]">
-                    <img
-                      className="w-2/3 object-contain"
-                      src={image}
-                      alt={`Painting ${index + 1}`}
-                    />
-                    <DialogHeader className="self-start pl-2 w-1/3">
-                      <DialogDescription className="font-playfair italic text-lg">
-                        Trompe l'oeil Rose de Valence
-                      </DialogDescription>
-                    </DialogHeader>
-                  </div>
-
-                  {/* <DialogFooter className="sm:justify-start">
-										<DialogClose asChild>
-											<Button type="button" variant="secondary">
-												Close
-											</Button>
-										</DialogClose>
-									</DialogFooter> */}
-                </DialogContent>
-              </Dialog>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <div className="absolute h-[210%] left-1/2">
-          <CarouselPrevious />
-          <CarouselNext />
-        </div>
-      </Carousel>
-    </section>
-  );
+	return (
+		<section id="portfolio" className="min-h-[400px] mt-16">
+			<SectionHeading>Portfolio</SectionHeading>
+			<CustomCarousel images={images} />
+		</section>
+	);
 }

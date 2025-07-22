@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,50 +41,43 @@ export default function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     className="hover:bg-white"
-                    href="#portfolio"
-                  >
+                    href="#portfolio">
                     PORTFOLIO
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     className="hover:bg-white"
-                    href="#projects"
-                  >
+                    href="#projects">
                     PROJECTS
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     className="hover:bg-white"
-                    href="#contact"
-                  >
+                    href="#contact">
                     CONTACT
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </div>
               {/* Mobile Navbar */}
               <div
-                className={
-                  isOpen
-                    ? "border-l-3 fixed right-0 top-0 flex h-screen w-1/3 items-center border-border bg-background shadow-[-1px_0px_10px_0px_rgba(17,24,39,1)] duration-300 ease-in lg:hidden"
-                    : "border-l-3 fixed right-[-50%] top-0 flex h-screen w-1/3 items-center border-border bg-background shadow-[-1px_0px_10px_0px_rgba(17,24,39,1)] duration-300 ease-in lg:hidden"
-                }
-              >
+                className={cn(
+                  "fixed right-0 top-0 flex h-screen w-1/3 items-center bg-background shadow-[0px_0px_7px_0px_rgba(17,24,39,1)] duration-300 ease-in lg:hidden",
+                  isOpen ? "translate-x-0" : "translate-x-full"
+                )}>
                 <div className="flex items-center justify-center w-full flex-col">
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className="hover:bg-white"
-                      href="#header"
-                    >
+                      href="#header">
                       HOME
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className="hover:bg-white"
-                      href="#about"
-                    >
+                      href="#about">
                       ABOUT
                     </NavigationMenuLink>
                   </NavigationMenuItem>
@@ -95,24 +89,21 @@ export default function Navbar() {
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className="hover:bg-white"
-                      href="#portfolio"
-                    >
+                      href="#portfolio">
                       PORTFOLIO
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className="hover:bg-white"
-                      href="#projects"
-                    >
+                      href="#projects">
                       PROJECTS
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className="hover:bg-white"
-                      href="#contact"
-                    >
+                      href="#contact">
                       CONTACT
                     </NavigationMenuLink>
                   </NavigationMenuItem>
@@ -122,8 +113,7 @@ export default function Navbar() {
                 {/* Mobile Button */}
                 <div
                   onClick={handleOpen}
-                  className="right-0 block p-4 lg:hidden"
-                >
+                  className="right-0 block p-4 lg:hidden">
                   {isOpen ? (
                     <AiOutlineClose size={20} />
                   ) : (
