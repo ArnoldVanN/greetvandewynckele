@@ -37,7 +37,7 @@ function App() {
           <CVSection />
         </div>
         <PortfolioSection />
-        <ProjectsSection />
+        {/* <ProjectsSection /> */}
         <ContactSection />
       </div>
     </>

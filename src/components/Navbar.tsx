@@ -45,13 +45,13 @@ export default function Navbar() {
                     PORTFOLIO
                   </NavigationMenuLink>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                {/* <NavigationMenuItem>
                   <NavigationMenuLink
                     className="hover:bg-white"
                     href="#projects">
                     PROJECTS
                   </NavigationMenuLink>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     className="hover:bg-white"
@@ -93,13 +93,13 @@ export default function Navbar() {
                       PORTFOLIO
                     </NavigationMenuLink>
                   </NavigationMenuItem>
-                  <NavigationMenuItem>
+                  {/* <NavigationMenuItem>
                     <NavigationMenuLink
                       className="hover:bg-white"
                       href="#projects">
                       PROJECTS
                     </NavigationMenuLink>
-                  </NavigationMenuItem>
+                  </NavigationMenuItem> */}
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className="hover:bg-white"
