@@ -21,8 +21,8 @@ export default function HeaderSection() {
           </p>
         </div>
 
-        <div className="absolute bottom-[5%] @container w-full text-center">
-          <p className=" text-gray-600 text-sm @md:text-sm font-[550] tracking-[0.8rem]">
+        <div className="absolute bottom-[5%] @container w-full p-2 text-center">
+          <p className=" text-gray-600 text-sm @md:text-md font-[550] @lg:font-[700] tracking-[0.8rem]">
             Master decorative painter
           </p>
         </div>
