@@ -58,7 +58,7 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
                 className="absolute top-0 left-4 right-0 bottom-0 
              bg-black/60 opacity-0 group-hover:opacity-100 
              flex flex-col items-center justify-center text-center text-white 
-             transition-opacity "
+             transition-opacity pointer-events-none"
               >
                 <div className="p-2 ">
                   <p className="font-playfair italic">{image.title}</p>
