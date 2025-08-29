@@ -58,10 +58,12 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
                 className="absolute top-0 left-4 right-0 bottom-0 
              bg-black/60 opacity-0 group-hover:opacity-100 
              flex flex-col items-center justify-center text-center text-white 
-             transition-opacity pointer-events-none"
+             transition-opacity "
               >
-                <p>{image.title}</p>
-                <p>{image.description}</p>
+                <div className="p-2 ">
+                  <p className="font-playfair italic">{image.title}</p>
+                  <p className="font-default">{image.description}</p>
+                </div>
               </div>
               <DialogTitle>{image.title}</DialogTitle>
               <DialogContent>
@@ -69,7 +71,6 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
                   <Carousel
                     setApi={(api: CarouselApi) => {
                       if (!api) return;
-                      // subscribe once
                       api.on("select", onSelect);
                     }}
                     opts={{ startIndex: index }}
@@ -81,22 +82,22 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
                           className="basis-full flex justify-center relative"
                         >
                           <img
-                            className="h-full max-h-[90vh]"
+                            className="h-full object-contain max-h-[90vh]"
                             src={img.src}
                             alt={img.alt}
                           />
                         </CarouselItem>
                       ))}
                     </CarouselContent>
-                    {/* <CarouselPrevious /> */}
-                    {/* <CarouselNext /> */}
                   </Carousel>
                 </div>
 
-                <DialogHeader className="self-start pl-2 w-1/3">
-                  <DialogTitle>{images[activeIndex].title}</DialogTitle>
+                <DialogHeader className="self-start pl-2 text-left">
+                  <DialogTitle className="font-playfair italic">
+                    {images[activeIndex].title}
+                  </DialogTitle>
                 </DialogHeader>
-                <DialogDescription>
+                <DialogDescription className="font-default pl-2 text-left">
                   {images[activeIndex].description}
                 </DialogDescription>
               </DialogContent>

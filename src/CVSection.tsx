@@ -1,4 +1,4 @@
-import CustomSection from "./components/SectionHeading";
+import CustomSection from "./components/CustomSection";
 
 export default function CVSection() {
   return (

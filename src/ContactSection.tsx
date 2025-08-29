@@ -1,4 +1,4 @@
-import CustomSection from "./components/SectionHeading";
+import CustomSection from "./components/CustomSection";
 import { FaInstagram, FaEnvelope } from "react-icons/fa";
 
 export default function ContactSection() {

@@ -1,5 +1,3 @@
-import CustomSection from "./components/SectionHeading";
-
 import p6 from "@/assets/art/painting (6).jpg";
 import p7 from "@/assets/art/painting (7).jpg";
 import p8 from "@/assets/art/painting (8).jpg";
@@ -17,8 +15,8 @@ import lichtelementDruif from "@/assets/art/lichtelementDruif.jpg";
 import sluitsteen from "@/assets/art/sluitsteen.jpg";
 import hoofdCaseïne from "@/assets/art/hoofdCaseïne.jpg";
 
+import CustomSection from "./components/CustomSection";
 import { type Image } from "./components/CustomCarousel";
-
 import CustomCarousel from "./components/CustomCarousel";
 
 const images: Image[] = [

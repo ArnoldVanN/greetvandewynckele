@@ -1,4 +1,4 @@
-import CustomSection from "./components/SectionHeading";
+import CustomSection from "./components/CustomSection";
 import aboutImage from "./assets/about_img.jpg";
 
 export default function AboutSection() {
