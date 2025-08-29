@@ -16,7 +16,7 @@ import sluitsteen from "@/assets/art/sluitsteen.jpg";
 import hoofdCaseïne from "@/assets/art/hoofdCaseïne.jpg";
 
 import CustomCarousel, { type Image } from "./components/CustomCarousel";
-import CustomSection from "./components/SectionHeading";
+import CustomSection from "./components/CustomSection";
 
 const images: Image[] = [
   {
