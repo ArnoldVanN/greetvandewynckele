@@ -1,6 +1,6 @@
 import CVSection from "./CVSection";
 import PortfolioSection from "./PortfolioSection";
-import ProjectsSection from "./ProjectsSection";
+// import ProjectsSection from "./ProjectsSection";
 import ContactSection from "./ContactSection";
 import HeaderSection from "./HeaderSection";
 import AboutSection from "./AboutSection";
