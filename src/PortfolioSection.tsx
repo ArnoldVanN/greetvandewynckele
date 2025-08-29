@@ -1,108 +1,130 @@
-import SectionHeading from "./components/SectionHeading";
+import CustomSection from "./components/SectionHeading";
 
-import p1 from "@/assets/art/painting (1).jpg";
-import p2 from "@/assets/art/painting (2).jpg";
-import p3 from "@/assets/art/painting (3).jpg";
-import p4 from "@/assets/art/painting (4).jpg";
-import p5 from "@/assets/art/painting (5).jpg";
 import p6 from "@/assets/art/painting (6).jpg";
 import p7 from "@/assets/art/painting (7).jpg";
 import p8 from "@/assets/art/painting (8).jpg";
 import p9 from "@/assets/art/painting (9).jpg";
-import p10 from "@/assets/art/painting (10).jpg";
-import p11 from "@/assets/art/painting (11).jpg";
-import p12 from "@/assets/art/painting (12).jpg";
 import p13 from "@/assets/art/painting (13).jpg";
 import p14 from "@/assets/art/painting (14).jpg";
 import p15 from "@/assets/art/painting (15).jpg";
+import lichtelementVertAntique from "@/assets/art/lichtelementVertAntique.jpg";
+import lichtelementSchilpad from "@/assets/art/lichtelementSchilpad.jpg";
+import lichtelementJauneDeSiennne from "@/assets/art/lichtelementJauneDeSiennne.jpg";
+import zwarteKat from "@/assets/art/zwarteKat.jpg";
+import egyptischBrons from "@/assets/art/egyptischBrons.jpg";
+import torsoRodinBrons from "@/assets/art/torsoRodinBrons.jpg";
+import lichtelementDruif from "@/assets/art/lichtelementDruif.jpg";
+import sluitsteen from "@/assets/art/sluitsteen.jpg";
+import hoofdCaseïne from "@/assets/art/hoofdCaseïne.jpg";
 
 import { type Image } from "./components/CustomCarousel";
 
 import CustomCarousel from "./components/CustomCarousel";
 
 const images: Image[] = [
-	{
-		src: p1,
-		alt: "Painting 1",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p2,
-		alt: "Painting 2",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p3,
-		alt: "Painting 3",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p4,
-		alt: "Painting 4",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p5,
-		alt: "Painting 5",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p6,
-		alt: "Painting 6",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p7,
-		alt: "Painting 7",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p8,
-		alt: "Painting 8",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p9,
-		alt: "Painting 9",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p10,
-		alt: "Painting 10",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p11,
-		alt: "Painting 11",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p12,
-		alt: "Painting 12",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p13,
-		alt: "Painting 13",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p14,
-		alt: "Painting 14",
-		description: "Trompe l'oeil Rose de Valence"
-	},
-	{
-		src: p15,
-		alt: "Painting 15",
-		description: "Trompe l'oeil Rose de Valence"
-	},
+  {
+    src: p13,
+    title: "White marble",
+    alt: "Painting 13",
+    description: "",
+  },
+  {
+    src: p14,
+    title: "Rose de Valence",
+    alt: "Painting 14",
+    description: "",
+  },
+  {
+    src: p15,
+    title: "Jaune Sainte Beaume",
+    alt: "Painting 15",
+    description: "",
+  },
+  {
+    src: p9,
+    title: "Medusa on Napoleon marble",
+    alt: "Painting 9",
+    description: "",
+  },
+  {
+    src: p7,
+    title: "French lily on Napoleon marble",
+    alt: "Painting 7",
+    description: "",
+  },
+  {
+    src: p8,
+    title: "Abstract motive in green onyx",
+    alt: "Painting 8",
+    description: "",
+  },
+  {
+    src: p6,
+    title: "Floral motive on white marble",
+    alt: "Painting 6",
+    description: "",
+  },
+  {
+    src: lichtelementVertAntique,
+    title: "Wall lighting Vert Antique",
+    alt: "lichtelement vert antique",
+    description: "",
+  },
+  {
+    src: lichtelementSchilpad,
+    title: "Wall lighting Ecaille",
+    alt: "lichtelement schilpad",
+    description:
+      "Ecaille, mixed techniques with watercolours, beer, and oilpaint",
+  },
+  {
+    src: lichtelementJauneDeSiennne,
+    title: "Wall lighting Jaune De Siennne",
+    alt: "lichtelement jaune de siennne",
+    description: "",
+  },
+  {
+    src: zwarteKat,
+    title: "Statue",
+    alt: "statue",
+    description: "Ptolemaic period, goddess Bastet, oil paint",
+  },
+  {
+    src: egyptischBrons,
+    title: "Statue",
+    alt: "statue",
+    description: "Ptolemaic period, goddess Bastet, Edyptian bronze",
+  },
+  {
+    src: torsoRodinBrons,
+    title: "Torso",
+    alt: "torso",
+    description: "Egyptian bronze",
+  },
+  {
+    src: lichtelementDruif,
+    title: "Wall lighting",
+    alt: "wall lighting",
+    description: "Caseïn paint, gilding with copper leaf",
+  },
+  {
+    src: sluitsteen,
+    title: "Keystone",
+    alt: "Keystone",
+    description: "Charcoal, shellac, oil paint, wax",
+  },
+  {
+    src: hoofdCaseïne,
+    title: "Facade ornament",
+    alt: "Facade ornament",
+    description: "Caseïn paint gilding with copper leaf",
+  },
 ];
 
 export default function PortfolioSection() {
-	return (
-		<section id="portfolio" className="min-h-[400px] mt-16">
-			<SectionHeading>Portfolio</SectionHeading>
-			<CustomCarousel images={images} />
-		</section>
-	);
+  return (
+    <CustomSection name="Portfolio" id="portfolio" className="xl:mx-0 md:mx-0">
+      <CustomCarousel images={images} />
+    </CustomSection>
+  );
 }

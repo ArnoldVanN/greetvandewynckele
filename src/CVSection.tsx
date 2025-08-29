@@ -1,12 +1,8 @@
-import SectionHeading from "./components/SectionHeading";
+import CustomSection from "./components/SectionHeading";
 
 export default function CVSection() {
   return (
-    <section
-      id="cv"
-      className="min-h-[400px]  mx-[5%] sm:mx-[10%] md:mx-[20%] xl:mx-[30%]  py-16 "
-    >
-      <SectionHeading>CV</SectionHeading>
+    <CustomSection name="CV" id="cv">
       <div className="mt-10">
         <div className="pt-6">
           <p className="font-bold text-amber-950">CV / Art Studies</p>
@@ -23,6 +19,6 @@ export default function CVSection() {
           </ul>
         </div>
       </div>
-    </section>
+    </CustomSection>
   );
 }

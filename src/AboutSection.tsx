@@ -1,13 +1,9 @@
-import SectionHeading from "./components/SectionHeading";
+import CustomSection from "./components/SectionHeading";
 import aboutImage from "./assets/about_img.jpg";
 
 export default function AboutSection() {
   return (
-    <section
-      id="about"
-      className="min-h-[400px] mx-[5%] sm:mx-[10%] md:mx-[20%] xl:mx-[30%] py-16"
-    >
-      <SectionHeading>About</SectionHeading>
+    <CustomSection id="about" name="About">
       <img src={aboutImage} alt="About Me" className="mx-auto mt-8" />
       <div className="mt-10 ">
         <p className="">
@@ -44,6 +40,6 @@ export default function AboutSection() {
           </ul>
         </div>
       </div>
-    </section>
+    </CustomSection>
   );
 }
