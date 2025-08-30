@@ -1,4 +1,3 @@
-import paintBg from "@/assets/verfBg.jpg";
 import { Separator } from "./components/ui/separator";
 
 export default function CVSection() {
@@ -7,7 +6,8 @@ export default function CVSection() {
       <div className="relative left-1/2 right-1/2 w-screen -mx-[50vw] bg-radial from-[#633a01] to-[#4f2c01]">
         <section id="cv" className="relative z-10">
           <img
-            src={paintBg}
+            loading="lazy"
+            src={"/verfBg.jpg"}
             alt="verf achtergrond"
             className="w-full h-80 object-cover object-center"
           />

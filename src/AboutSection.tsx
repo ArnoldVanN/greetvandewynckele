@@ -1,10 +1,9 @@
 import CustomSection from "./components/CustomSection";
-import aboutImage from "./assets/about_img.jpg";
 
 export default function AboutSection() {
   return (
     <CustomSection id="about" name="About">
-      <img src={aboutImage} alt="About Me" className="mx-auto mt-8" />
+      <img src="/about_img.jpg" alt="About Me" className="mx-auto mt-8" />
       <div className="mt-10 ">
         <p className="text-justify">
           Art is a lifelong passion of mine. My first foray into artistic

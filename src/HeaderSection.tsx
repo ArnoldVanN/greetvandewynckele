@@ -1,10 +1,9 @@
-import header_image from "@/assets/header_img.jpg";
 export default function HeaderSection() {
   return (
     <section id="header" className="pb-12 text-center">
       <div className="relative h-[36rem]">
         <img
-          src={header_image}
+          src={"/header_img.jpg"}
           className="max-w-full w-full h-full object-cover object-top mb-4"
           alt="header image"
         />

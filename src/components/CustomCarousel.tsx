@@ -48,6 +48,7 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
             <Dialog>
               <DialogTrigger asChild>
                 <img
+                  loading="lazy"
                   className="w-full h-full object-cover hover:cursor-pointer"
                   src={image.src}
                   alt={image.title}

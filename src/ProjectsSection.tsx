@@ -1,53 +1,44 @@
-import p2 from "@/assets/art/painting (2).jpg";
-import pauw from "@/assets/art/projects/pauw.jpg";
-import floralMotif from "@/assets/art/projects/floralMotif.jpg";
-import angel from "@/assets/art/projects/angel.jpg";
-import onyx from "@/assets/art/projects/onyxLabrizering1.jpg";
-import tabletop from "@/assets/art/projects/tafelblad.jpg";
-import tabletopCeltic from "@/assets/art/projects/tabletopCeltic.jpg";
-import asianTree from "@/assets/art/projects/asianTree.jpg";
-
 import CustomCarousel, { type Image } from "./components/CustomCarousel";
 import CustomSection from "./components/CustomSection";
 
 const images: Image[] = [
   {
-    src: pauw,
+    src: "/art/projects/pauw.jpg",
     title: "Mansion hall restoration",
     description: "Cleaning and restoration of oilpaint", // TODO: add link to https://auvio.rtbf.be/emission/une-brique-dans-le-ventre-22
   },
   {
-    src: floralMotif,
+    src: "/art/projects/floralMotif.jpg",
     title: "Mansion hall restoration",
     description: "Cleaning and restoration floral motifs",
   },
   {
-    src: angel,
+    src: "/art/projects/angel.jpg",
     title: "Mansion hall restoration",
     description: "Cleaning",
   },
   {
-    src: asianTree,
+    src: "/art/projects/asianTree.jpg",
     title: "Chinoiserie",
     description: "Oil paint on copper leaf and mixtion",
   },
   {
-    src: onyx,
+    src: "/art/projects/onyxLabrizering1.jpg",
     title: "Wall paneling",
     description: "Onyx",
   },
   {
-    src: p2,
+    src: "/art/painting (2).jpg",
     title: "Wall paneling",
     description: "Vert Antique",
   },
   {
-    src: tabletop,
+    src: "/art/projects/tafelblad.jpg",
     title: "Table top",
     description: "Marquetry marble",
   },
   {
-    src: tabletopCeltic,
+    src: "/art/projects/tabletopCeltic.jpg",
     title: "Table top",
     description: "Celtic motive, copper leave on mixtion",
   },
