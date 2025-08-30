@@ -16,7 +16,7 @@ export default function CustomSection({
     <section
       id={id}
       className={cn(
-        "min-h-[400px]  mx-[5%] sm:mx-[10%] md:mx-[20%] xl:mx-[30%]  py-16 ",
+        "min-h-[400px] mx-[5%] sm:mx-[10%] md:mx-[20%] xl:mx-[30%] py-16 ",
         className,
       )}
     >

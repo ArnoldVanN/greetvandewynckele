@@ -20,7 +20,6 @@ import React from "react";
 
 export type Image = {
   src: string;
-  alt: string;
   title: string;
   description: string;
 };
@@ -37,6 +36,7 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
     setActiveIndex(api.selectedScrollSnap());
   }, []);
 
+  // TODO: refactor so that every CarouselItem doesnt have to render a separate Dialog containing a whole ass other carousel..
   return (
     <Carousel className="mt-6 md:flex ">
       <CarouselContent>
@@ -48,9 +48,9 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
             <Dialog>
               <DialogTrigger asChild>
                 <img
-                  className="w-full h-full object-cover "
+                  className="w-full h-full object-cover hover:cursor-pointer"
                   src={image.src}
-                  alt={image.alt}
+                  alt={image.title}
                 />
               </DialogTrigger>
 
@@ -84,7 +84,7 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
                           <img
                             className="h-full object-contain max-h-[90vh]"
                             src={img.src}
-                            alt={img.alt}
+                            alt={img.title}
                           />
                         </CarouselItem>
                       ))}

@@ -6,7 +6,7 @@ export default function ContactSection() {
     <CustomSection name="Contact" id="contact">
       <div className="w-fit mx-auto mt-8">
         <ul className="text-lg">
-          <li className="flex items-center justify-center gap-2">
+          {/* <li className="flex items-center justify-center gap-2">
             <FaInstagram />
             <a
               href="https://www.instagram.com/greet.vw"
@@ -15,7 +15,7 @@ export default function ContactSection() {
             >
               @greet.vw
             </a>
-          </li>
+          </li> */}
           <li className="flex items-center justify-center gap-2">
             <FaEnvelope />
             <a href="mailto:greet.vdw.gv@gmail.com">greet.vdw.gv@gmail.com</a>

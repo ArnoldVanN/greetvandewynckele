@@ -1,126 +1,64 @@
-import p6 from "@/assets/art/painting (6).jpg";
-import p7 from "@/assets/art/painting (7).jpg";
-import p8 from "@/assets/art/painting (8).jpg";
-import p9 from "@/assets/art/painting (9).jpg";
-import p13 from "@/assets/art/painting (13).jpg";
-import p14 from "@/assets/art/painting (14).jpg";
-import p15 from "@/assets/art/painting (15).jpg";
-import lichtelementVertAntique from "@/assets/art/lichtelementVertAntique.jpg";
-import lichtelementSchilpad from "@/assets/art/lichtelementSchilpad.jpg";
-import lichtelementJauneDeSiennne from "@/assets/art/lichtelementJauneDeSiennne.jpg";
-import zwarteKat from "@/assets/art/zwarteKat.jpg";
-import egyptischBrons from "@/assets/art/egyptischBrons.jpg";
-import torsoRodinBrons from "@/assets/art/torsoRodinBrons.jpg";
-import lichtelementDruif from "@/assets/art/lichtelementDruif.jpg";
-import sluitsteen from "@/assets/art/sluitsteen.jpg";
-import hoofdCaseïne from "@/assets/art/hoofdCaseïne.jpg";
+import p2 from "@/assets/art/painting (2).jpg";
+import pauw from "@/assets/art/projects/pauw.jpg";
+import floralMotif from "@/assets/art/projects/floralMotif.jpg";
+import angel from "@/assets/art/projects/angel.jpg";
+import onyx from "@/assets/art/projects/onyxLabrizering1.jpg";
+import tabletop from "@/assets/art/projects/tafelblad.jpg";
+import tabletopCeltic from "@/assets/art/projects/tabletopCeltic.jpg";
+import asianTree from "@/assets/art/projects/asianTree.jpg";
 
 import CustomCarousel, { type Image } from "./components/CustomCarousel";
 import CustomSection from "./components/CustomSection";
 
 const images: Image[] = [
   {
-    src: p13,
-    title: "White marble",
-    alt: "Painting 13",
-    description: "",
+    src: pauw,
+    title: "Mansion hall restoration",
+    description: "Cleaning and restoration of oilpaint", // TODO: add link to https://auvio.rtbf.be/emission/une-brique-dans-le-ventre-22
   },
   {
-    src: p14,
-    title: "Rose de Valence",
-    alt: "Painting 14",
-    description: "",
+    src: floralMotif,
+    title: "Mansion hall restoration",
+    description: "Cleaning and restoration floral motifs",
   },
   {
-    src: p15,
-    title: "Jaune Sainte Beaume",
-    alt: "Painting 15",
-    description: "",
+    src: angel,
+    title: "Mansion hall restoration",
+    description: "Cleaning",
   },
   {
-    src: p9,
-    title: "Medusa on Napoleon marble",
-    alt: "Painting 9",
-    description: "",
+    src: asianTree,
+    title: "Chinoiserie",
+    description: "Oil paint on copper leaf and mixtion",
   },
   {
-    src: p7,
-    title: "French lily on Napoleon marble",
-    alt: "Painting 7",
-    description: "",
+    src: onyx,
+    title: "Wall paneling",
+    description: "Onyx",
   },
   {
-    src: p8,
-    title: "Abstract motive in green onyx",
-    alt: "Painting 8",
-    description: "",
+    src: p2,
+    title: "Wall paneling",
+    description: "Vert Antique",
   },
   {
-    src: p6,
-    title: "Floral motive on white marble",
-    alt: "Painting 6",
-    description: "",
+    src: tabletop,
+    title: "Table top",
+    description: "Marquetry marble",
   },
   {
-    src: lichtelementVertAntique,
-    title: "Wall lighting Vert Antique",
-    alt: "lichtelement vert antique",
-    description: "",
-  },
-  {
-    src: lichtelementSchilpad,
-    title: "Wall lighting Ecaille",
-    alt: "lichtelement schilpad",
-    description:
-      "Ecaille, mixed techniques with watercolours, beer, and oilpaint",
-  },
-  {
-    src: lichtelementJauneDeSiennne,
-    title: "Wall lighting Jaune De Siennne",
-    alt: "lichtelement jaune de siennne",
-    description: "",
-  },
-  {
-    src: zwarteKat,
-    title: "Statue",
-    alt: "statue",
-    description: "Ptolemaic period, goddess Bastet, oil paint",
-  },
-  {
-    src: egyptischBrons,
-    title: "Statue",
-    alt: "statue",
-    description: "Ptolemaic period, goddess Bastet, Edyptian bronze",
-  },
-  {
-    src: torsoRodinBrons,
-    title: "Torso",
-    alt: "torso",
-    description: "Egyptian bronze",
-  },
-  {
-    src: lichtelementDruif,
-    title: "Wall lighting",
-    alt: "wall lighting",
-    description: "Caseïn paint, gilding with copper leaf",
-  },
-  {
-    src: sluitsteen,
-    title: "Keystone",
-    alt: "Keystone",
-    description: "Charcoal, shellac, oil paint, wax",
-  },
-  {
-    src: hoofdCaseïne,
-    title: "Facade ornament",
-    alt: "Facade ornament",
-    description: "Caseïn paint gilding with copper leaf",
+    src: tabletopCeltic,
+    title: "Table top",
+    description: "Celtic motive, copper leave on mixtion",
   },
 ];
 
 export default function ProjectsSection() {
   return (
     <CustomSection name="Projects" id="projects" className="xl:mx-0 md:mx-0">
+      <div className="@container w-full font-playfair text-center pt-6">
+        <p>A brief overview of completed assignments</p>
+      </div>
       <CustomCarousel images={images} />
     </CustomSection>
   );
