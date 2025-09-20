@@ -1,4 +1,4 @@
-import CVSection from "./CVSection";
+import CredentialsSection from "./CredentialsSection";
 import PortfolioSection from "./PortfolioSection";
 import ProjectsSection from "./ProjectsSection";
 import ContactSection from "./ContactSection";
@@ -35,7 +35,7 @@ function App() {
         <HeaderSection />
         <div className=" text-left">
           <AboutSection />
-          <CVSection />
+          <CredentialsSection />
         </div>
         <PortfolioSection />
         <ProjectsSection />

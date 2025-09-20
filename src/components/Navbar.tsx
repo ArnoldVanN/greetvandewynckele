@@ -34,14 +34,18 @@ export default function Navbar() {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuLink className="hover:bg-white" href="#cv">
-                    CV
+                  <NavigationMenuLink
+                    className="hover:bg-white"
+                    href="#credentials"
+                  >
+                    CREDENTIALS
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     className="hover:bg-white"
-                    href="#portfolio">
+                    href="#portfolio"
+                  >
                     PORTFOLIO
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -55,7 +59,8 @@ export default function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     className="hover:bg-white"
-                    href="#contact">
+                    href="#contact"
+                  >
                     CONTACT
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -64,32 +69,39 @@ export default function Navbar() {
               <div
                 className={cn(
                   "fixed right-0 top-0 flex h-screen w-1/3 items-center bg-background shadow-[0px_0px_7px_0px_rgba(17,24,39,1)] duration-300 ease-in lg:hidden",
-                  isOpen ? "translate-x-0" : "translate-x-full"
-                )}>
+                  isOpen ? "translate-x-0" : "translate-x-full",
+                )}
+              >
                 <div className="flex items-center justify-center w-full flex-col">
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className="hover:bg-white"
-                      href="#header">
+                      href="#header"
+                    >
                       HOME
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className="hover:bg-white"
-                      href="#about">
+                      href="#about"
+                    >
                       ABOUT
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink className="hover:bg-white" href="#cv">
-                      CV
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className="hover:bg-white"
-                      href="#portfolio">
+                      href="#credentials"
+                    >
+                      CREDENTIALS
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink
+                      className="hover:bg-white"
+                      href="#portfolio"
+                    >
                       PORTFOLIO
                     </NavigationMenuLink>
                   </NavigationMenuItem>
@@ -103,7 +115,8 @@ export default function Navbar() {
                   <NavigationMenuItem>
                     <NavigationMenuLink
                       className="hover:bg-white"
-                      href="#contact">
+                      href="#contact"
+                    >
                       CONTACT
                     </NavigationMenuLink>
                   </NavigationMenuItem>
@@ -113,7 +126,8 @@ export default function Navbar() {
                 {/* Mobile Button */}
                 <div
                   onClick={handleOpen}
-                  className="right-0 block p-4 lg:hidden">
+                  className="right-0 block p-4 lg:hidden"
+                >
                   {isOpen ? (
                     <AiOutlineClose size={20} />
                   ) : (

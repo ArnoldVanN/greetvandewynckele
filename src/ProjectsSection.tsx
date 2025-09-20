@@ -5,7 +5,9 @@ const images: Image[] = [
   {
     src: "/art/projects/pauw.jpg",
     title: "Mansion hall restoration",
-    description: "Cleaning and restoration of oilpaint", // TODO: add link to https://auvio.rtbf.be/emission/une-brique-dans-le-ventre-22
+    description:
+      "Cleaning and restoration of oilpaint. A documentary series by RTFB about the restoration of this mansion is available at: ",
+    link: "https://auvio.rtbf.be/emission/une-brique-dans-le-ventre-22",
   },
   {
     src: "/art/projects/floralMotif.jpg",

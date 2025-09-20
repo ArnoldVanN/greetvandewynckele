@@ -1,0 +1,35 @@
+# Google
+User-agent: Googlebot
+Disallow:
+
+# Bing
+User-agent: Bingbot
+Disallow:
+
+# Yandex
+User-agent: Yandex
+Disallow:
+
+# Baidu
+User-agent: Baiduspider
+Disallow:
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Disallow:
+
+# Apple
+User-agent: Applebot
+Disallow:
+
+# Yahoo
+User-agent: Slurp
+Disallow:
+
+# Archive.org
+User-agent: ia_archiver
+Disallow:
+
+# Block all others
+User-agent: *
+Disallow: /

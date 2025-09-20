@@ -6,7 +6,7 @@ const images: Image[] = [
   {
     src: "/art/painting (13).jpg",
     title: "Trompe l'oeil",
-    description: "Witte marmer",
+    description: "White marble",
   },
   {
     src: "/art/painting (14).jpg",
@@ -46,13 +46,12 @@ const images: Image[] = [
   {
     src: "/art/lichtelementSchilpad.jpg",
     title: "Wall lighting Ecaille",
-    description:
-      "Ecaille, mixed techniques with watercolours, beer, and oilpaint",
+    description: "Mixed techniques with watercolours, beer, and oilpaint",
   },
   {
     src: "/art/lichtelementJauneDeSiennne.jpg",
     title: "Wall lighting",
-    description: "Wall lighting Jaune de Sienne",
+    description: "Jaune de Sienne",
   },
   {
     src: "/art/zwarteKat.jpg",
