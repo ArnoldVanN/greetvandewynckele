@@ -5,6 +5,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "./ui/carousel";
 
 import {
@@ -13,7 +14,7 @@ import {
   DialogDescription,
   DialogHeader,
 } from "./ui/dialog";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export type Image = {
   src: string;
@@ -27,8 +28,23 @@ type CustomCarouselProps = {
 };
 
 export default function CustomCarousel({ images }: CustomCarouselProps) {
+  const [api, setApi] = useState<CarouselApi>();
   const [startIndex, setStartingIndex] = useState(0);
   const [open, setOpen] = useState(false);
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+    api.on("init", () => {
+      setCurrent(startIndex);
+    });
+  }, [api]);
 
   return (
     <>
@@ -67,7 +83,7 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="lg:h-[85vh] w-[95vw]">
           <div className="flex">
-            <Carousel opts={{ startIndex: startIndex }}>
+            <Carousel setApi={setApi} opts={{ startIndex: startIndex }}>
               <CarouselContent>
                 {images.map((img, idx) => (
                   <CarouselItem
@@ -87,17 +103,17 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
 
           <DialogHeader className="self-start pl-2 text-left">
             <DialogTitle className="font-playfair italic">
-              {images[startIndex].title}
+              {images[current].title}
             </DialogTitle>
           </DialogHeader>
           <DialogDescription className="font-default pl-2 text-left">
-            {images[startIndex].description}
+            {images[current].description}
             {images[startIndex].link && (
               <a
-                href={images[startIndex].link}
+                href={images[current].link}
                 className="underline text-blue-400"
               >
-                {images[startIndex].link}
+                {images[current].link}
               </a>
             )}
           </DialogDescription>
