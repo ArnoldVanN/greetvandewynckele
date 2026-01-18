@@ -53,11 +53,6 @@ jobs:
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:ci
 
-      - name: Tailscale
-        uses: tailscale/github-action@v4
-        with:
-          ping: pi-home
-
       - name: Setup Kubeconfig
         run: |
           mkdir $HOME/.kube
