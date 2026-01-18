@@ -1,4 +1,5 @@
 import { Separator } from "./components/ui/separator";
+import { R2_BASE_URL } from "./config";
 
 export default function CredentialsSection() {
   return (
@@ -7,7 +8,7 @@ export default function CredentialsSection() {
         <section id="credentials" className="relative z-10">
           <img
             loading="lazy"
-            src={"/verfBg.jpg"}
+            src={`${R2_BASE_URL}/verfBg.jpg`}
             alt="verf achtergrond"
             className="w-full h-80 object-cover object-center"
           />

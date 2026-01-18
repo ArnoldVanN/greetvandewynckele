@@ -1,46 +1,47 @@
 import CustomCarousel, { type Image } from "./components/CustomCarousel";
 import CustomSection from "./components/CustomSection";
+import { R2_BASE_URL } from "./config";
 
 const images: Image[] = [
   {
-    src: "/art/projects/pauw.jpg",
+    src: `${R2_BASE_URL}/art/projects/pauw.jpg`,
     title: "Mansion hall restoration",
     description:
       "Cleaning and restoration of oilpaint. A documentary series by RTFB about the restoration of this mansion is available at: ",
-    link: "https://auvio.rtbf.be/emission/une-brique-dans-le-ventre-22",
+    link: `${R2_BASE_URL}/emission/une-brique-dans-le-ventre-22`,
   },
   {
-    src: "/art/projects/floralMotif.jpg",
+    src: `${R2_BASE_URL}/art/projects/floralMotif.jpg`,
     title: "Mansion hall restoration",
     description: "Cleaning and restoration floral motifs",
   },
   {
-    src: "/art/projects/angel.jpg",
+    src: `${R2_BASE_URL}/art/projects/angel.jpg`,
     title: "Mansion hall restoration",
     description: "Cleaning",
   },
   {
-    src: "/art/projects/asianTree.jpg",
+    src: `${R2_BASE_URL}/art/projects/asianTree.jpg`,
     title: "Chinoiserie",
     description: "Oil paint on copper leaf and mixtion",
   },
   {
-    src: "/art/projects/onyxLabrizering1.jpg",
+    src: `${R2_BASE_URL}/art/projects/onyxLabrizering1.jpg`,
     title: "Wall paneling",
     description: "Onyx",
   },
   {
-    src: "/art/painting (2).jpg",
+    src: `${R2_BASE_URL}/art/painting (2).jpg`,
     title: "Wall paneling",
     description: "Vert Antique",
   },
   {
-    src: "/art/projects/tafelblad.jpg",
+    src: `${R2_BASE_URL}/art/projects/tafelblad.jpg`,
     title: "Table top",
     description: "Marquetry marble",
   },
   {
-    src: "/art/projects/tabletopCeltic.jpg",
+    src: `${R2_BASE_URL}/art/projects/tabletopCeltic.jpg`,
     title: "Table top",
     description: "Celtic motive, copper leave on mixtion",
   },

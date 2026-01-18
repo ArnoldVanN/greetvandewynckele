@@ -1,90 +1,91 @@
 import CustomSection from "./components/CustomSection";
 import { type Image } from "./components/CustomCarousel";
 import CustomCarousel from "./components/CustomCarousel";
+import { R2_BASE_URL } from "./config";
 
 const images: Image[] = [
   {
-    src: "/art/painting (13).jpg",
+    src: `${R2_BASE_URL}/art/painting (13).jpg`,
     title: "Trompe l'oeil",
     description: "White marble",
   },
   {
-    src: "/art/painting (14).jpg",
+    src: `${R2_BASE_URL}/art/painting (14).jpg`,
     title: "Trompe l'oeil",
     description: "Rose de Valence",
   },
   {
-    src: "/art/painting (15).jpg",
+    src: `${R2_BASE_URL}/art/painting (15).jpg`,
     title: "Trompe l'oeil",
     description: "Jaune Sainte Beaume",
   },
   {
-    src: "/art/painting (9).jpg",
+    src: `${R2_BASE_URL}/art/painting (9).jpg`,
     title: "Trompe l'oeil",
     description: "Medusa on Napoleon marble",
   },
   {
-    src: "/art/painting (7).jpg",
+    src: `${R2_BASE_URL}/art/painting (7).jpg`,
     title: "Trompe l'oeil",
     description: "French lily on Napoleon marble",
   },
   {
-    src: "/art/painting (8).jpg",
+    src: `${R2_BASE_URL}/art/painting (8).jpg`,
     title: "Trompe l'oeil",
     description: "Abstract motive in green onyx",
   },
   {
-    src: "/art/painting (6).jpg",
+    src: `${R2_BASE_URL}/art/painting (6).jpg`,
     title: "Trompe l'oeil",
     description: "Floral motive on white marble",
   },
   {
-    src: "/art/lichtelementVertAntique.jpg",
+    src: `${R2_BASE_URL}/art/lichtelementVertAntique.jpg`,
     title: "Wall lighting",
     description: "Vert Antique",
   },
   {
-    src: "/art/lichtelementSchilpad.jpg",
+    src: `${R2_BASE_URL}/art/lichtelementSchilpad.jpg`,
     title: "Wall lighting Ecaille",
     description: "Mixed techniques with watercolours, beer, and oilpaint",
   },
   {
-    src: "/art/lichtelementJauneDeSiennne.jpg",
+    src: `${R2_BASE_URL}/art/lichtelementJauneDeSiennne.jpg`,
     title: "Wall lighting",
     description: "Jaune de Sienne",
   },
   {
-    src: "/art/zwarteKat.jpg",
+    src: `${R2_BASE_URL}/art/zwarteKat.jpg`,
     title: "Statue",
     description: "Ptolemaic period, goddess Bastet, oil paint",
   },
   {
-    src: "/art/egyptischBrons.jpg",
+    src: `${R2_BASE_URL}/art/egyptischBrons.jpg`,
     title: "Statue",
     description: "Ptolemaic period, goddess Bastet, Edyptian bronze",
   },
   {
-    src: "/art/torsoRodinBrons.jpg",
+    src: `${R2_BASE_URL}/art/torsoRodinBrons.jpg`,
     title: "Torso",
     description: "Egyptian bronze",
   },
   {
-    src: "/art/medusa.jpg",
+    src: `${R2_BASE_URL}/art/medusa.jpg`,
     title: "Bass relief",
     description: "Medusa, Hellenistic period, Egyptian bronze",
   },
   {
-    src: "/art/lichtelementDruif.jpg",
+    src: `${R2_BASE_URL}/art/lichtelementDruif.jpg`,
     title: "Wall lighting",
     description: "Caseïn paint, gilding with copper leaf",
   },
   {
-    src: "/art/sluitsteen.jpg",
+    src: `${R2_BASE_URL}/art/sluitsteen.jpg`,
     title: "Keystone",
     description: "Charcoal, shellac, oil paint, wax",
   },
   {
-    src: "/art/hoofdCaseïne.jpg ",
+    src: `${R2_BASE_URL}/art/hoofdCaseïne.jpg`,
     title: "Facade ornament",
     description: "Caseïn paint gilding with copper leaf",
   },

@@ -1,9 +1,10 @@
 import CustomSection from "./components/CustomSection";
+import { R2_BASE_URL } from "./config";
 
 export default function AboutSection() {
   return (
     <CustomSection id="about" name="About">
-      <img src="/about_img.jpg" alt="About Me" className="mx-auto mt-8" />
+      <img src={`${R2_BASE_URL}/about_img.jpg`} alt="About Me" className="mx-auto mt-8" />
       <div className="mt-10 ">
         <p className="text-justify">
           Art is a lifelong passion of mine. My first foray into artistic

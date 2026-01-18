@@ -1,9 +1,11 @@
+import { R2_BASE_URL } from "./config";
+
 export default function HeaderSection() {
   return (
     <section id="header" className="pb-12 text-center">
-      <div className="relative h-[36rem]">
+      <div className="relative h-144">
         <img
-          src={"/header_img.jpg"}
+          src={`${R2_BASE_URL}/header_img.jpg`}
           className="max-w-full w-full h-full object-cover object-top mb-4"
           alt="header image"
         />
@@ -21,7 +23,7 @@ export default function HeaderSection() {
         </div>
 
         <div className="absolute bottom-[5%] @container w-full p-2 text-center">
-          <p className=" text-gray-600 text-sm @md:text-md font-[550] @lg:font-[700] tracking-[0.8rem]">
+          <p className=" text-gray-600 text-sm @md:text-md font-[550] @lg:font-bold tracking-[0.8rem]">
             Master decorative painter
           </p>
         </div>
