@@ -4,29 +4,10 @@ import ProjectsSection from "./ProjectsSection";
 import ContactSection from "./ContactSection";
 import HeaderSection from "./HeaderSection";
 import AboutSection from "./AboutSection";
-import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 function App() {
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      const target = e.target as HTMLAnchorElement;
-      if (
-        target.tagName === "A" &&
-        target.getAttribute("href")?.startsWith("#")
-      ) {
-        e.preventDefault();
-        const id = target.getAttribute("href")!.slice(1);
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    };
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
-  }, []);
 
   return (
     <>
