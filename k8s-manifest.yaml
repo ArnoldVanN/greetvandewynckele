@@ -4,7 +4,7 @@ metadata:
   name: greetvandewynckele-deployment
   namespace: greetvandewynckele
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: greetvandewynckele
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: greetvandewynckele
-          image: your-registry/react-static-app:latest
+          image: ghcr.io/arnoldvann/greetvandewynckele:latest
           ports:
             - containerPort: 80
 ---
@@ -29,7 +29,7 @@ spec:
     app: greetvandewynckele
   ports:
     - protocol: TCP
-      port: 443
+      port: 8080
       targetPort: 80
   type: ClusterIP
 ---
@@ -41,7 +41,7 @@ metadata:
 spec:
   parentRefs:
     - name: greetvdw-gw
-      namespace: istio-ingress
+      namespace: ingress
   hostnames:
     - "greetvandewynckele.com"
     - "*.greetvandewynckele.com"
@@ -52,40 +52,19 @@ spec:
             value: /
       backendRefs:
         - name: greetvandewynckele-svc
-          port: 443
+          port: 8080
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: greetvdw-gw
-  namespace: istio-ingress
+  namespace: ingress
 spec:
-  gatewayClassName: istio
+  gatewayClassName: traefik
   listeners:
-    - name: https-greetvdw
-      hostname: "greetvandewynckele.com"
-      protocol: HTTPS
-      port: 443
-      tls:
-        mode: Terminate
-        certificateRefs:
-          - name: greetvdw-cert
-            namespace: istio-ingress
-            group: ""
-      allowedRoutes:
-        namespaces:
-          from: Selector
-          selector:
-            matchLabels:
-              kubernetes.io/metadata.name: greetvandewynckele
-    - name: https-greetvdw-wc
-      hostname: "*.greetvandewynckele.com"
-      protocol: HTTPS
-      port: 443
-      tls:
-        mode: Terminate
-        certificateRefs:
-          - name: greetvdw-cert
+    - name: http
+      protocol: HTTP
+      port: 8080
       allowedRoutes:
         namespaces:
           from: Selector
