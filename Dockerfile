@@ -1,31 +1,25 @@
 # syntax=docker/dockerfile:1
-FROM node:20-slim AS builder
+FROM node:26-slim AS builder
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
-RUN corepack enable
-
-# Optional: explicitly install latest corepack (usually unnecessary on Node 20+ since corepack is bundled)
-RUN echo "Before: corepack version => $(corepack --version || echo 'not installed')" && \
-    npm install -g corepack@latest && \
-    echo "After : corepack version => $(corepack --version)" && \
+RUN npm install -g corepack@latest && \
     corepack enable && \
     pnpm --version
-
-RUN apt-get update
 
 WORKDIR /app
 COPY . .
 
 RUN pnpm install --frozen-lockfile && pnpm run build
 
-# Stage 2: Serve with NGINX
-FROM nginx:alpine
+FROM nginxinc/nginx-unprivileged:alpine
 
+USER root
 COPY --from=builder /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
+USER 101
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]
