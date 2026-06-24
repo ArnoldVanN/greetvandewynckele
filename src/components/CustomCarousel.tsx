@@ -15,6 +15,7 @@ import {
   DialogHeader,
 } from "./ui/dialog";
 import { useEffect, useState } from "react";
+import { cfImage } from "@/config";
 
 export type Image = {
   src: string;
@@ -38,12 +39,13 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
       return;
     }
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-    api.on("init", () => {
-      setCurrent(startIndex);
-    });
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    onSelect();
+    api.on("select", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+    };
   }, [api]);
 
   return (
@@ -57,8 +59,13 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
             >
               <img
                 loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover hover:cursor-pointer"
-                src={image.src}
+                src={cfImage(image.src, { width: 600, fit: "cover" })}
+                srcSet={`${cfImage(image.src, {
+                  width: 600,
+                  fit: "cover",
+                })} 1x, ${cfImage(image.src, { width: 1200, fit: "cover" })} 2x`}
                 alt={image.title}
                 onClick={() => {
                   setStartingIndex(index);
@@ -81,8 +88,8 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
         </div>
       </Carousel>
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="lg:h-[85vh] w-[95vw]">
-          <div className="flex">
+        <DialogContent className="lg:h-[85vh] w-[95vw] flex flex-col gap-2">
+          <div className="flex-1 min-h-0 flex">
             <Carousel setApi={setApi} opts={{ startIndex: startIndex }}>
               <CarouselContent>
                 {images.map((img, idx) => (
@@ -91,8 +98,9 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
                     className="basis-full flex justify-center relative"
                   >
                     <img
-                      className="h-full object-contain max-h-[90vh]"
-                      src={img.src}
+                      decoding="async"
+                      className="h-full w-full object-contain"
+                      src={cfImage(img.src, { width: 1800 })}
                       alt={img.title}
                     />
                   </CarouselItem>
@@ -101,22 +109,22 @@ export default function CustomCarousel({ images }: CustomCarouselProps) {
             </Carousel>
           </div>
 
-          <DialogHeader className="self-start pl-2 text-left">
+          <DialogHeader className="shrink-0 gap-1 pl-2 text-left">
             <DialogTitle className="font-playfair italic">
               {images[current].title}
             </DialogTitle>
+            <DialogDescription className="font-default">
+              {images[current].description}
+              {images[current].link && (
+                <a
+                  href={images[current].link}
+                  className="underline text-blue-400"
+                >
+                  {images[current].link}
+                </a>
+              )}
+            </DialogDescription>
           </DialogHeader>
-          <DialogDescription className="font-default pl-2 text-left">
-            {images[current].description}
-            {images[startIndex].link && (
-              <a
-                href={images[current].link}
-                className="underline text-blue-400"
-              >
-                {images[current].link}
-              </a>
-            )}
-          </DialogDescription>
         </DialogContent>
       </Dialog>
     </>
